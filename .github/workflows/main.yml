@@ -19,8 +19,8 @@ jobs:
     
     - run: |
         docker-compose up -d
-        docker tag ghcr.io/soriano-dev/docker-registry-github/dockerized-node:latest ghcr.io/soriano-dev/docker-registry-github/dockerized-node:${{ github.sha }}
+        docker tag dockerized-node:latest dockerized-node:${{ github.sha }}
     
     - run: |
-        docker push ghcr.io/soriano-dev/docker-registry-github/dockerized-node:latest
-        docker push ghcr.io/soriano-dev/docker-registry-github/dockerized-node:${{ github.sha }}
+        docker push dockerized-node:latest
+        docker push dockerized-node:${{ github.sha }}
