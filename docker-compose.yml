@@ -7,7 +7,7 @@ services:
     environment:
       NODE_ENV: development
     ports:
-      - '8093:3000'
+      - '3000:3000'
     volumes:
       - .:/home/nodejs/app
       - /home/nodejs/app/node_modules
