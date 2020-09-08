@@ -18,9 +18,9 @@ jobs:
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
     
     - run: |
-        docker build -t soriano-dev/docker-registry-github:latest -f Dockerfile .
-        docker tag soriano-dev/docker-registry-github:latest soriano-dev/docker-registry-github:${{ github.sha }}
+        docker build -t ghcr.io/soriano-dev/docker-registry-github/dockerized-node:latest -f Dockerfile .
+        docker tag ghcr.io/soriano-dev/docker-registry-github/dockerized-node:latest ghcr.io/soriano-dev/docker-registry-github/dockerized-node:${{ github.sha }}
     
     - run: |
-        docker push soriano-dev/docker-registry-github:latest
-        docker push soriano-dev/docker-registry-github:${{ github.sha }}
+        docker push ghcr.io/soriano-dev/docker-registry-github/dockerized-node:latest
+        docker push ghcr.io/soriano-dev/docker-registry-github/dockerized-node:${{ github.sha }}
